@@ -21,6 +21,11 @@ app.post("/register",async(req,res)=>{
     let result=await cricket.save()
     res.json({"Status":"Success"}) 
 })
+app.post("/viewdata",async(req,res)=>{
+    let result=await cricketModel.find()
+    res.json(result)
+})
+
 
 app.listen(8080,()=>{
     console.log("SERVER IS STARTED")
